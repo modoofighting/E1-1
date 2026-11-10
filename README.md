@@ -28,7 +28,8 @@
 |-----------|------|
 | Linux CLI (WSL2 Ubuntu) | 작업 디렉터리·권한 관리 |
 | Docker | 재현 가능한 컨테이너 실행 환경 |
-| Git / GitHub | 로컬 버전 관리 및 원격 협업 |
+| Git | 내 컴퓨터에서 파일 변경 이력과 커밋을 관리한다. |
+| GitHub | Git 저장소를 온라인에 보관하고 다른 사람과 공유·협업한다. |
 
 ### 1. 실행 환경
 
@@ -689,7 +690,7 @@ VS Code에서 `project/site/index.html`을 열어 `<h1>` 안의 문구만 `바�
 |---|---|---|
 | [<img src="./logs/17-bind-mount-browser-before-refresh.png" alt="localhost 8082에서 이전 제목이 보이는 화면" width="250">](./logs/17-bind-mount-browser-before-refresh.png) | [<img src="./logs/18-bind-mount-curl-before-after.png" alt="VS Code 수정 및 curl 수정 전후 응답" width="250">](./logs/18-bind-mount-curl-before-after.png) | [<img src="./logs/20-bind-mount-browser-after-refresh.png" alt="localhost 8082에서 바인드 마운트 변경 확인 문구가 표시된 화면" width="250">](./logs/20-bind-mount-browser-after-refresh.png) |
 
-앞선 실행에서 과제 루트의 잘못된 `site/`가 연결되어 403이 나타났던 기록과 한글 인코딩 문제는 [이전 시도와 수정 기록](./logs/16-bind-mount-result.md)에 남겨 두었다.
+초기 시도에서 과제 루트의 잘못된 `site/`를 연결해 403이 발생한 원인은 [초기 바인드 마운트 기록](./logs/16-bind-mount-result.md)에, 올바른 `project/site/` 연결과 변경 전·후 터미널·브라우저 증거는 [최종 검증 기록](./logs/19-bind-mount-verification.md)에 정리했다.
 
 ### 9. Docker 볼륨 영속성 검증
 
@@ -771,6 +772,8 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES</code></p
 <pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; white-space: pre-wrap; overflow-wrap: anywhere; color: #1f2328;"><code style="color: inherit;" class="bash"># 새 컨테이너에서 파일 내용을 확인한다.
 <span style="color: #0969da;">docker exec vol-test2 cat /data/hello.txt</span>
 hello</code></pre>
+
+[볼륨 생성부터 첫 컨테이너 삭제, 새 컨테이너에서 데이터 보존 확인까지의 기록은 이 절의 9-1~9-6 순서에 이어 정리했다.](#9-docker-볼륨-영속성-검증)
 
 #### 9-7. 명령어 구성
 
@@ -950,7 +953,8 @@ Get-ChildItem : 매개 변수 이름 'la'과(와) 일치하는 매개 변수를 
 | 포트 매핑 | 호스트와 컨테이너 포트 연결 |
 | 바인드 마운트 | 호스트 폴더를 컨테이너에 연결 |
 | Docker 볼륨 | Docker가 관리하는 데이터 저장소 |
-| Git / GitHub | 로컬 버전 관리 / 원격 저장소 |
+| Git | 로컬에서 파일 변경 이력과 커밋을 관리하는 도구 |
+| GitHub | Git 저장소를 원격에 보관하고 협업·공유하는 플랫폼 |
 
 #### 핵심 개념 메모
 
