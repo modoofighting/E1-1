@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------->8
+Version: 4.99.0 (245822)
+Sha1:
+Started on: 2026-11-09 13:38:08.774
+Resources: C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\resources
+OS: Windows 10 Pro
+Edition: Professional
+Id: 2009
+Build: 26100
+BuildLabName: 26100.1.amd64fre.ge_release.240331-1435
+File: C:\Users\UserK\AppData\Local\Docker\install-log.txt
+CommandLine: "C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\Docker Desktop Installer.exe" install -package C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\DockerDesktop.d4w --user -vm-package C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\DockerDesktopVM.d4w
+You can send feedback, including this log file, at https://dockr.ly/desktop-feedback
+[2026-11-09T13:38:08.938285500Z][Installer][I] No installation found
+[2026-11-09T13:38:09.238904500Z][PerUserInstallHandler][I] Running per user installation
+[2026-11-09T13:38:09.550708800Z][InstallWorkflow][I] Using package: C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\DockerDesktop.d4w
+[2026-11-09T13:38:09.686078300Z][InstallWorkflow][I] Phase 0: Pre-check
+[2026-11-09T13:38:12.286830600Z][InstallWorkflow][I] Checking prerequisites
+[2026-11-09T13:38:16.344959000Z][InstallWorkflow][I] Selected backend mode:
+[2026-11-09T13:38:16.554992300Z][InstallWorkflow][I] Phase 1: Staging
+[2026-11-09T13:38:16.572900000Z][DeployArtifacts][I] Unpacking C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\DockerDesktop.d4w to C:\Users\UserK\AppData\Local\Programs\DockerDesktop.staging
+[2026-11-09T13:38:16.576902900Z][DeployArtifacts][I] Unpacking with C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\7zr.exe
+[2026-11-09T13:38:49.745023300Z][DeployArtifacts][I] Unpacking C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\DockerDesktopVM.d4w to C:\Users\UserK\AppData\Local\Programs\DockerDesktop.staging
+[2026-11-09T13:38:49.745023300Z][DeployArtifacts][I] Unpacking with C:\Users\UserK\AppData\Local\Temp\DockerDesktopInstallers\1794231485745442900\7zr.exe
+[2026-11-09T13:38:59.886146200Z][InstallWorkflow][I] Phase 3: Activation (file-by-file move)
+[2026-11-09T13:39:00.194960000Z][InstallWorkflow][I] Moved 169 file(s) from 'C:\Users\UserK\AppData\Local\Programs\DockerDesktop.staging' to 'C:\Users\UserK\AppData\Local\Programs\DockerDesktop'
+[2026-11-09T13:39:00.194960000Z][InstallWorkflow][I] Phase 4: Components
+[2026-11-09T13:39:00.214927300Z][InstallWorkflow][I] Deploying component Docker.Installer.ShortcutAction
+[2026-11-09T13:39:00.334173200Z][InstallWorkflow-ShortcutAction][I] Creating shortcut: C:\Users\UserK\AppData\Roaming\Microsoft\Windows\Start Menu\Docker Desktop.lnk/Docker Desktop
+[2026-11-09T13:39:00.383483400Z][InstallWorkflow][I] Deploying component Docker.Installer.ShortcutAction
+[2026-11-09T13:39:00.394286700Z][InstallWorkflow-ShortcutAction][I] Creating shortcut: C:\Users\UserK\Desktop\Docker Desktop.lnk/Docker Desktop
+[2026-11-09T13:39:00.398614900Z][InstallWorkflow][I] Deploying component Docker.Installer.AutoStartAction
+[2026-11-09T13:39:00.398614900Z][InstallWorkflow][I] Deploying component Docker.Installer.PathAction
+[2026-11-09T13:39:01.048988300Z][InstallWorkflow][I] Deploying component Docker.Installer.ExecAction
+[2026-11-09T13:39:01.056691800Z][InstallWorkflow-ExecAction][I] Running: C:\Users\UserK\AppData\Local\Programs\DockerDesktop\InstallerCli.exe --user -i with timeout=-1
+[2026-11-09T13:39:01.801379300Z][InstallWorkflow][I] Registering new product
+[2026-11-09T13:39:01.801379300Z][RegisterProductStep][I] Registering product information
+[2026-11-09T13:39:01.817168500Z][RegisterProductStep][I] Registering docker-desktop url-protocol
+[2026-11-09T13:39:01.821916800Z][InstallWorkflow][I] Phase 5: Validation
+[2026-11-09T13:39:01.837022600Z][InstallWorkflow][I] Phase 6: Cleanup
+[2026-11-09T13:39:01.837022600Z][InstallWorkflow][I] Installation succeeded
