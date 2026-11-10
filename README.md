@@ -56,7 +56,7 @@ C:\Users\UserK
 | -------------------------------------------------------------------------- | :-: |
 | WSL2 설치 및 Ubuntu 진입 확인                                                     |  ☑  |
 | 터미널 기본 조작 (경로 확인 / 파일 생성·복사·이동·삭제)                                         |  ☑  |
-| 파일·디렉터리 권한 변경 실습 (<span style="color: #0969da;"><code>chmod</code></span>) |  □  |
+| 파일·디렉터리 권한 변경 실습 (<span style="color: #0969da;"><code>chmod</code></span>) |  ☑  |
 | Docker 설치 및 기본 점검 (`--version` / `info`)                                   |  ☑  |
 | `hello-world` 컨테이너 실행                                                      |  ☑  |
 | Ubuntu 컨테이너 진입 및 내부 명령 수행                                                  |  ☑  |
@@ -64,8 +64,8 @@ C:\Users\UserK
 | 포트 매핑 실행 및 브라우저 접속 확인 (2회)                                                 |  ☑  |
 | 바인드 마운트 반영 확인 (변경 전·후 비교)                                                  |  ☑  |
 | Docker 볼륨 생성 및 영속성 검증 (컨테이너 삭제 전·후 비교)                                     |  ☑  |
-| Git 사용자 정보 및 기본 브랜치 설정                                                     |  □  |
-| GitHub 로그인 및 저장소 연동 (VS Code)                                              |  □  |
+| Git 저장소 작성자 정보 및 main 브랜치 확인                                      |  ☑  |
+| GitHub 로그인·저장소 연동 및 업로드 확인                                         |  ☑  |
 
 ## Ⅱ. WSL·Ubuntu 및 기본 명령 실습
 
@@ -854,30 +854,34 @@ git -C "C:\all in one\e1-1" config --local --get user.email
 
 #### 10-4. 변경 검토와 업로드
 
-아래 명령은 PowerShell에서 순서대로 실행한다. `git add`는 README와 로그를 포함해 제출할 파일을 커밋 준비 영역에 올린다. `.gitignore`에 적힌 개인 설정·복구 자료는 제외된다.
+GitHub 인증, 저장소 작성자 정보 설정, 커밋 및 업로드를 완료했다.
+
+| 확인 항목 | 확인 결과 |
+|-----------|-----------|
+| 커밋 | `7b4b220` — `docs:update E1-1 README` |
+| 푸시 | `main` 브랜치를 `origin/main`에 업로드 완료 |
+| 최종 상태 | `## main...origin/main` — 로컬과 원격이 동기화됨 |
+| 상세 기록 | [Git 상태 및 업로드 기록](./logs/22-git-status-after-staging.md), [GitHub 인증 기록](./logs/23-github-cli-auth.md), [작성자 이메일 설정 기록](./logs/24-git-author-email.md) |
+
+다음에 문서를 수정해 다시 올릴 때는 PowerShell에서 아래 순서로 실행한다.
 
 ```powershell
-# 수정·추가된 파일을 모두 커밋 준비 영역에 등록한다.
+# 수정·추가 파일을 커밋 준비 영역에 올린다.
 git add -A
-
-# 등록 결과를 확인한다. ?? 또는 unstaged 변경이 남았으면 원인을 확인한다.
+# 파일이 모두 등록됐는지 확인한다.
 git status -sb
-
-# 커밋에 포함할 파일 목록과 변경 내용을 검토한다.
-git diff --cached --name-only
+# 커밋 내용을 검토한다.
+git diff --cached --check
+git diff --cached --stat
 git diff --cached
-
-# 검토가 끝난 변경을 로컬 저장소에 커밋한다.
+# 검토한 변경을 기록하고 GitHub에 올린다.
 git commit -m "docs: update E1-1 README"
-
-# main 브랜치의 커밋을 GitHub 저장소에 올린다.
 git push origin main
-
-# 업로드 후 로컬과 원격이 같은지 확인한다.
+# 로컬과 GitHub가 동기화됐는지 확인한다.
 git status -sb
 ```
 
-상태가 `## main...origin/main`으로만 표시되고 변경 파일 목록이 없으면 업로드가 끝난 상태다. `README.md`와 `logs/` 링크를 포함해 저장소의 실제 파일을 함께 올려야 링크가 GitHub에서도 열린다. 문서에서 확인한 로컬 링크는 모두 대상 파일이 존재한다.
+`## main...origin/main`만 표시되면 동기화가 완료된 상태다. README에서 링크한 로그 파일도 함께 커밋해야 GitHub에서 링크가 열린다.
 
 #### 10-5. 참고: 새 저장소의 기본 브랜치 설정
 
@@ -932,17 +936,6 @@ Get-ChildItem : 매개 변수 이름 'la'과(와) 일치하는 매개 변수를 
 
 
 ### 12. 학습 정리
-
-#### 핵심 개념 확인
-
-- [ ] WSL2의 역할 설명
-- [ ] PowerShell과 Ubuntu Bash의 차이 설명
-- [ ] 절대 경로와 상대 경로의 차이 설명
-- [ ] `r / w / x`, `755`, `644` 권한 해석
-- [ ] Dockerfile·이미지·컨테이너 설명
-- [ ] 포트 매핑의 필요성 설명
-- [ ] 바인드 마운트와 Docker 볼륨의 차이 설명
-- [ ] Git과 GitHub의 역할 차이 설명
 
 #### 핵심 개념 요약
 

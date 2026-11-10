@@ -150,3 +150,16 @@ A  project/site/index.html
 ```
 
 `??`는 Git이 아직 추적하지 않는 파일이다. 인증·작성자 이메일 로그는 이 상태 확인 이후 생성되어 아직 추가되지 않은 것으로 표시됐다. `MM`은 README에 스테이징된 변경과 미스테이징 변경이 함께 있음을, `AM`은 추가된 로그에 스테이징 뒤의 수정이 더 있음을 뜻한다.
+
+## 커밋·업로드 완료 확인
+
+```text
+[main 7b4b220] docs:update E1-1 README
+33 files changed, 2198 insertions(+), 560 deletions(-)
+c7de919..7b4b220  main -> main
+
+PS> git status -sb
+## main...origin/main
+```
+
+커밋 `7b4b220`을 `origin/main`에 올렸고, 마지막 상태에서 로컬과 원격이 동기화된 것을 확인했다.
