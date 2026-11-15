@@ -963,7 +963,7 @@ Get-ChildItem : 매개 변수 이름 'la'과(와) 일치하는 매개 변수를 
 
 ---
 
-# 📂 절대경로 vs 상대경로 완벽 정리
+# 📂 절대경로 vs 상대경로 
 
 ## 1. 절대경로 (Absolute Path)
 
@@ -972,11 +972,7 @@ Get-ChildItem : 매개 변수 이름 'la'과(와) 일치하는 매개 변수를 
 * 리눅스 / macOS: 루트 디렉토리 (`/`)
 * 윈도우: 드라이브 이름 (`C:\`, `D:\`)
 
-
 * **특징**: 내가 어디에 있든 **항상 동일한 경로**로 파일을 정확하게 찾을 수 있습니다.
-* **사용 예시**:
-* 리눅스: `/home/userk/documents/file.txt`
-* 윈도우: `C:\Users\UserK\Documents\file.txt`
 
 ---
 
@@ -990,10 +986,6 @@ Get-ChildItem : 매개 변수 이름 'la'과(와) 일치하는 매개 변수를 
 
 
 * **특징**: 경로가 짧고 간결하지만, **내가 있는 위치가 바뀌면 경로도 함께 변경**되어야 합니다.
-* **사용 예시**:
-* 현재 위치가 `/home/userk/`일 때: `documents/file.txt`
-* 현재 위치가 `/home/userk/documents/`일 때, 상위 폴더로 나가서 다른 곳으로 갈 때: `../other_folder/file.txt`
-
 ---
 
 ## 3. 🔍 한눈에 비교하기
