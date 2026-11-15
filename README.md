@@ -481,11 +481,13 @@ f2c832204f4a   hello-world   exited    fervent_keldy</code></pre>
 
 | 명령                                                                | 설명          | 종료 시 컨테이너         |
 | ----------------------------------------------------------------- | ----------- | ----------------- |
-| <span style="color: #0969da;"><code>docker attach</code></span>   | 메인 프로세스에 연결 | 메인 프로세스가 종료될 수 있음 |
-| <span style="color: #0969da;"><code>docker exec -it</code></span> | 새 프로세스로 진입  | 컨테이너 유지           |
+| <span style="color: #0969da;"><code>docker attach</code></span>   | 컨테이너에서 이미 실행중인 주 프로세스의 입출력에 연결 | 메인 프로세스가 종료될 수 있음 |
+| <span style="color: #0969da;"><code>docker exec -it</code></span> | 컨테이너 안에서 새로운 bash 셀을 실행하고 접속한  | 컨테이너 유지           |
 
 두 명령 모두 실행 중인 컨테이너에 들어갈 때 쓰지만, 연결 방식이 다르다. <span style="color: #0969da;"><code>attach</code></span>는 컨테이너를 시작한 기존 주 프로세스의 터미널에 다시 연결한다. <span style="color: #0969da;"><code>exec</code></span>는 실행 중인 컨테이너 안에 별도의 명령(예: 새 Bash)을 시작한다. 그래서 `exec` 셸에서 `exit`해도 주 프로세스가 계속 실행 중이면 컨테이너는 유지된다.
 
+예를 들어 Ubuntu 컨테이너의 주 프로세스가 Bash라면 `attach`로 그 Bash에
+연결할 수 있다. `exec`는 주 프로세스와 별도로 새 Bash를 실행한다.
 `gallant_hopper`는 `docker ps -a`에서 확인한 실행 중 컨테이너 이름이다. 아래 두 명령은 WSL Ubuntu에서 실행했고, 두 터미널 모두 같은 컨테이너의 `root` 셸에 연결됐다.
 
 <pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; white-space: pre-wrap; overflow-wrap: anywhere; color: #1f2328;"><code style="color: inherit;" class="bash"># 왼쪽 터미널: 컨테이너 안의 새 Bash를 실행
