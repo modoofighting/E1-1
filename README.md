@@ -373,6 +373,13 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES</code></p
 
 #### 6-1. hello-world
 
+앞서 `docker images`로 확인한 결과 로컬 이미지가 없었다. Docker가 정상적으로
+동작하는지 간단히 확인하기 위해 `hello-world` 공식 이미지를 선택했다.
+
+`docker run hello-world`는 로컬에서 이미지를 먼저 찾는다. 이미지가 없으면
+Docker Hub의 `library/hello-world:latest`를 자동으로 내려받은 뒤, 해당
+이미지로 컨테이너를 만들고 실행한다.
+
 <span style="color: #0969da;"><code>docker run</code></span>은 이미지를 내려받아 컨테이너를 만들고 실행한다. <span style="color: #0969da;"><code>hello-world</code></span>는 이미지 이름이며, 로컬에 없으면 기본 저장소인 Docker Hub의 `library/hello-world`에서 내려받는다.
 
 <pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; white-space: pre-wrap; overflow-wrap: anywhere; color: #1f2328;"><code style="color: inherit;" class="bash"># hello-world 이미지를 내려받아 컨테이너로 실행한다.
