@@ -843,7 +843,6 @@ hello</code></pre>
 # 인증 후 로그인된 계정을 다시 확인한다.
 <span style="color: #0969da;">gh auth status --hostname github.com</span></code></pre>
 
-인증 상태를 확인한 출력 전문은 [GitHub CLI 인증 확인 기록](./logs/23-github-cli-auth.md)에 연결한다.
 
 #### 10-3. 커밋 작성자 정보 설정
 
