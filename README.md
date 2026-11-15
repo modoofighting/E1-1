@@ -68,16 +68,12 @@ C:\Users\UserK
 | Git 저장소 작성자 정보 및 main 브랜치 확인                                      |  ☑  |
 | GitHub 로그인·저장소 연동 및 업로드 확인                                         |  ☑  |
 
-## Ⅱ. WSL·Ubuntu 및 기본 명령 실습
-
-### 3. WSL2 설치 및 Ubuntu 진입
-
 
 ---
 
 ## 💻 환경별 버전 확인 한 줄 명령어
 
-### 🐧 1. WSL (리눅스) 환경와 윈도우 powershell 에서 실행
+### 🐧 1. WSL (리눅스) 환경와 윈도우 powershell 명령
 
 wsl(리눅스)환경
 
@@ -92,7 +88,10 @@ Windows PowerShell 환경에서 실행
 ```powershell
 wsl -l -v; git --version; docker --version; wsl bash -c 'cat /etc/os-release | head -n2; bash --version | head -n1; uname -r'
 
+## Ⅱ. WSL·Ubuntu 및 기본 명령 실습
 ```
+### 3. WSL2 설치 및 Ubuntu 진입
+
 #### 3-1. WSL2 설치 확인
 <pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; white-space: pre-wrap; overflow-wrap: anywhere; color: #1f2328;"><code style="color: inherit;"># PowerShell에서 실행
 # WSL 버전 확인
