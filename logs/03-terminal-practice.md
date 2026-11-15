@@ -1,56 +1,98 @@
 # Ubuntu Bash 기본 조작
 
-기록일: 2026-11-09 (KST)
+실습 경로: `/home/skylandspace010191/workspace/practice`
 
-## 실습 폴더와 파일 생성
+## 1. 실습 폴더 생성과 이동
 
-<pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa;"><code class="bash">userk@Win11-01:/mnt/c/Users/UserK$ <span style="color: #0969da;">mkdir -p ~/workspace/practice</span>
-userk@Win11-01:/mnt/c/Users/UserK$ <span style="color: #0969da;">cd ~/workspace/practice</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">pwd</span></code></pre>
+```bash
+# 중간 경로를 포함해 실습 폴더를 만든다.
+mkdir -p ~/workspace/practice
 
-```text
-/home/userk/workspace/practice
+# 실습 폴더로 이동한다.
+cd ~/workspace/practice
+
+# 현재 경로를 확인한다.
+pwd
 ```
 
-<pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa;"><code class="bash">userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">touch hello.txt</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">exho "Hello. Dec Workstation!" &gt;hello.txt</span></code></pre>
+실행 결과:
 
 ```text
-Command 'exho' not found, did you mean:
-  command 'echo' from deb coreutils-from-gnu (0.0.0~ubuntu25)
-  command 'echo' from deb coreutils-from-uutils (0.0.0~ubuntu25)
-Try: sudo apt install <deb name>
+/home/skylandspace010191/workspace/practice
 ```
 
-<span style="color: #0969da;"><code>exho</code></span>는 오타라 파일에 쓰지 못했다. 이어서 <span style="color: #0969da;"><code>echo</code></span>를 실행했다.
+## 2. 파일 생성과 내용 확인
 
-<pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa;"><code class="bash">userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">echo "Hello. Dev Worksttion!" &gt;hello.txt</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">cat hello.txt</span></code></pre>
+```bash
+# 빈 파일을 만든다.
+touch hello.txt
+
+# 파일의 권한과 크기를 확인한다.
+ls -la hello.txt
+```
+
+실행 결과:
 
 ```text
-Hello. Dev Worksttion!
+-rw-r--r-- 1 skylandspace010191 skylandspace010191 0 Nov 15 15:58 hello.txt
 ```
 
-## 복사·이동·삭제
+```bash
+# 파일에 문장을 쓴다.
+echo "hello, Dev workstation!" > hello.txt
 
-<pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa;"><code class="bash">userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">cp hello.txt hello_backup.txt</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">mv hello_backup.txt renamed.txt</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">ls -la</span></code></pre>
+# 파일의 내용을 확인한다.
+cat hello.txt
+```
+
+실행 결과:
+
+```text
+hello, Dev workstation!
+```
+
+## 3. 파일 복사와 이름 변경
+
+```bash
+# 원본을 복사해 백업 파일을 만든다.
+cp hello.txt hello_backup.txt
+
+# 백업 파일의 이름을 변경한다.
+mv hello_backup.txt renamed.txt
+
+# 파일 목록을 확인한다.
+ls -la
+```
+
+실행 결과:
 
 ```text
 total 16
-drwxr-xr-x 2 userk userk 4096 Nov  9 17:57 .
-drwxr-xr-x 3 userk userk 4096 Nov  9 17:53 ..
--rw-r--r-- 1 userk userk   23 Nov  9 17:56 hello.txt
--rw-r--r-- 1 userk userk   23 Nov  9 17:56 renamed.txt
+drwxr-xr-x 2 skylandspace010191 skylandspace010191 4096 Nov 15 16:07 .
+drwxr-xr-x 3 skylandspace010191 skylandspace010191 4096 Nov 15 15:57 ..
+-rw-r--r-- 1 skylandspace010191 skylandspace010191   24 Nov 15 15:59 hello.txt
+-rw-r--r-- 1 skylandspace010191 skylandspace010191   24 Nov 15 16:00 renamed.txt
 ```
 
-<pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa;"><code class="bash">userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">rm renamed.txt</span>
-userk@Win11-01:~/workspace/practice$ <span style="color: #0969da;">ls -la</span></code></pre>
+원본인 `hello.txt`와 이름을 변경한 `renamed.txt`를 확인했다.
+
+## 4. 파일 삭제와 확인
+
+```bash
+# 이름을 변경한 파일을 삭제한다.
+rm renamed.txt
+
+# 삭제가 반영됐는지 확인한다.
+ls -la
+```
+
+실행 결과:
 
 ```text
 total 12
-drwxr-xr-x 2 userk userk 4096 Nov  9 17:57 .
-drwxr-xr-x 3 userk userk 4096 Nov  9 17:53 ..
--rw-r--r-- 1 userk userk   23 Nov  9 17:56 hello.txt
+drwxr-xr-x 2 skylandspace010191 skylandspace010191 4096 Nov 15 16:08 .
+drwxr-xr-x 3 skylandspace010191 skylandspace010191 4096 Nov 15 15:57 ..
+-rw-r--r-- 1 skylandspace010191 skylandspace010191   24 Nov 15 15:59 hello.txt
 ```
+
+`renamed.txt`가 삭제되고 원본 `hello.txt`가 남아 있는 것을 확인했다.
