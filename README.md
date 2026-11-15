@@ -77,19 +77,17 @@ C:\Users\UserK
 
 ## 💻 환경별 버전 확인 한 줄 명령어
 
-### 🐧 1. WSL (리눅스) 환경에서 실행
+### 🐧 1. WSL (리눅스) 환경와 윈도우 powershell 에서 실행
 
-WSL 터미널에 접속한 상태에서 아래 명령어를 그대로 복사해서 붙여넣으세요.
+wsl(리눅스)환경
 
 ```bash
 cat /etc/os-release | head -n2; bash --version | head -n1; uname -r; git --version; docker --version
 
-
 ---
 
-### 💻 2. Windows PowerShell 환경에서 실행
+Windows PowerShell 환경에서 실행
 
-Windows PowerShell 창에서 아래 명령어를 그대로 복사해서 붙여넣으세요. (Windows 환경의 도구들과 WSL 내부 환경까지 한 번에 확인할 수 있습니다.)
 
 ```powershell
 wsl -l -v; git --version; docker --version; wsl bash -c 'cat /etc/os-release | head -n2; bash --version | head -n1; uname -r'
