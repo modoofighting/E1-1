@@ -72,10 +72,30 @@ C:\Users\UserK
 
 ### 3. WSL2 설치 및 Ubuntu 진입
 
-> Windows에서 Linux CLI를 사용하기 위해 WSL2 Ubuntu를 실행한다.
 
+---
+
+## 💻 환경별 버전 확인 한 줄 명령어
+
+### 🐧 1. WSL (리눅스) 환경에서 실행
+
+WSL 터미널에 접속한 상태에서 아래 명령어를 그대로 복사해서 붙여넣으세요.
+
+```bash
+cat /etc/os-release | head -n2; bash --version | head -n1; uname -r; git --version; docker --version
+
+
+---
+
+### 💻 2. Windows PowerShell 환경에서 실행
+
+Windows PowerShell 창에서 아래 명령어를 그대로 복사해서 붙여넣으세요. (Windows 환경의 도구들과 WSL 내부 환경까지 한 번에 확인할 수 있습니다.)
+
+```powershell
+wsl -l -v; git --version; docker --version; wsl bash -c 'cat /etc/os-release | head -n2; bash --version | head -n1; uname -r'
+
+```
 #### 3-1. WSL2 설치 확인
-
 <pre style="border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; white-space: pre-wrap; overflow-wrap: anywhere; color: #1f2328;"><code style="color: inherit;"># PowerShell에서 실행
 # WSL 버전 확인
 <span style="color: #0969da;">wsl --version</span></code></pre>
